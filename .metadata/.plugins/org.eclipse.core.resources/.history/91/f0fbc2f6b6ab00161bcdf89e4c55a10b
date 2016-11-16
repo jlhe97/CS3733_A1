@@ -1,0 +1,72 @@
+package jherreroestrada;
+import ks.client.gamefactory.GameWindow;
+import ks.common.games.Solitaire;
+import ks.common.model.*;
+import ks.common.view.*;
+import ks.launcher.Main;
+
+public class MountOlympus  extends Solitaire{
+
+	MultiDeck deck;
+	DeckView deckView;
+	IntegerView scoreView;
+	IntegerView numLeftView;
+	
+	@Override
+	public String getName() {
+		return "Mount Olympus";
+	}
+
+	@Override
+	public boolean hasWon() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void initialize() {
+		initializeModel(getSeed());
+		initializeView();
+		initializeControllers();	
+	}
+
+	private void initializeView() {
+		CardImages ci = getCardImages();
+		int w = ci.getWidth();
+		int h = ci.getHeight();
+		
+		
+		// the MultiDeck view and elts
+		deckView = new DeckView(deck);
+		deckView.setBounds(20, 20, w, h);
+		container.addWidget(deckView);
+		// ----------------------------
+		
+		// Score and NumOfCardsLeft views
+		scoreView = new IntegerView(getScore());
+		scoreView.setFontSize(11);
+		scoreView.setBounds(20, 40+h, w, h/2);
+		container.addWidget(scoreView);
+		
+		numLeftView = new IntegerView(getNumLeft());
+		numLeftView.setFontSize(11);
+		numLeftView.setBounds(20, 60 + (3/2 * h), w, h/2);
+		container.addWidget(numLeftView);
+		// -------------------------------------
+	}
+
+	private void initializeControllers() {
+		
+	}
+
+	private void initializeModel(int seed) {
+		deck = new MultiDeck("d",2);
+		deck.create(seed);
+		model.addElement(deck);
+	}
+	
+	public static void main (String [] args){
+		GameWindow gw = Main.generateWindow(new MountOlympus(), Deck.OrderBySuit);
+	}
+
+}

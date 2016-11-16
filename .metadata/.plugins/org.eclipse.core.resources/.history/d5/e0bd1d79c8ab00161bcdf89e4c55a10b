@@ -1,0 +1,25 @@
+package jherreroestrada;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import ks.common.model.*;
+
+public class MountOlympusDeckController extends MouseAdapter {
+
+	MultiDeck deck;
+	Column[] columns;
+	
+	public MountOlympusDeckController(MountOlympus mountOlympus, MultiDeck deck, Column[] columns){
+		this.deck = deck;
+		this.columns = columns;
+	}
+	
+	public void mousePressed(MouseEvent me){
+		
+		Move m = new DealCardMove(deck, columns);
+			if (m.doMove(MountOlympus)){
+				MountOlympus.pushMove(m);
+				MountOlympus.refreshWidgets();
+			}
+	}
+}

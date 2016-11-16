@@ -1,0 +1,88 @@
+package jherreroestrada;
+import ks.client.gamefactory.GameWindow;
+import ks.common.games.Solitaire;
+import ks.common.model.*;
+import ks.common.view.*;
+import ks.launcher.Main;
+
+public class MountOlympus  extends Solitaire{
+
+	MultiDeck deck;
+	DeckView deckView;
+	IntegerView scoreView;
+	IntegerView numLeftView;
+	
+	// --- columns ----------
+	Column column1;
+	ColumnView columnView1;
+	// -----------------------
+	
+	@Override
+	public String getName() {
+		return "Mount Olympus";
+	}
+
+	@Override
+	public boolean hasWon() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void initialize() {
+		initializeModel(getSeed());
+		initializeView();
+		initializeControllers();	
+	}
+
+	private void initializeView() {
+		CardImages ci = getCardImages();
+		int w = ci.getWidth();
+		int h = ci.getHeight();
+		int delta = ci.getOverlap();
+		
+		
+		// the MultiDeck view and elts
+		deckView = new DeckView(deck);
+		deckView.setBounds(20, 20, w, h);
+		container.addWidget(deckView);
+		// ----------------------------
+		
+		// Score and NumOfCardsLeft views
+		scoreView = new IntegerView(getScore());
+		scoreView.setFontSize(16);
+		scoreView.setBounds(20, 40+h, w, h/2);
+		container.addWidget(scoreView);
+		
+		numLeftView = new IntegerView(getNumLeft());
+		numLeftView.setFontSize(16);
+		numLeftView.setBounds(20, 100 + (3/2 * h), w, h/2);
+		container.addWidget(numLeftView);
+		// -------------------------------------
+		
+		
+		// ----- 9 Columns / Tableau ----------
+		columnView1 = new ColumnView(column1);
+		columnView1.setBounds(20, 150+(3*h), w, h + 12*delta);
+		container.addWidget(columnView1);
+		// ------------------------------------
+	}
+
+	private void initializeControllers() {
+		
+	}
+
+	private void initializeModel(int seed) {
+		deck = new MultiDeck("d",2);
+		deck.create(seed);
+		model.addElement(deck);
+		
+		column1 = new Column("col1");
+		model.addElement(column1);
+	}
+	
+	public static void main (String [] args){
+		GameWindow gw = Main.generateWindow(new MountOlympus(), Deck.OrderBySuit);
+	}
+
+}

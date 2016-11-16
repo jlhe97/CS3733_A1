@@ -1,0 +1,50 @@
+package jherreroestrada;
+import ks.client.gamefactory.GameWindow;
+import ks.common.games.Solitaire;
+import ks.common.model.*;
+import ks.common.view.*;
+import ks.launcher.Main;
+
+public class MountOlympus  extends Solitaire{
+
+	MultiDeck deck;
+	DeckView deckView;
+	
+	@Override
+	public String getName() {
+		return "Mount Olympus";
+	}
+
+	@Override
+	public boolean hasWon() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void initialize() {
+		initializeModel(getSeed());
+		initializeView();
+		initializeControllers();	
+	}
+
+	private void initializeView() {
+		deckView = new DeckView(deck);
+		container.addWidget(deckView);
+	}
+
+	private void initializeControllers() {
+		
+	}
+
+	private void initializeModel(int seed) {
+		deck = new MultiDeck("d",2);
+		deck.create(seed);
+		model.addElement(deck);
+	}
+	
+	public static void main (String [] args){
+		GameWindow gw = Main.generateWindow(new MountOlympus(), Deck.OrderBySuit);
+	}
+
+}
