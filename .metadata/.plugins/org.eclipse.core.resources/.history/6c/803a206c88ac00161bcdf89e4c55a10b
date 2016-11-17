@@ -1,0 +1,7 @@
+package jherreroestrada;
+
+import java.awt.event.MouseAdapter;
+
+public class MountOlympusColumnController extends MouseAdapter {
+
+}

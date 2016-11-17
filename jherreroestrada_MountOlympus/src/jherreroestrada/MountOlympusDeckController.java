@@ -2,8 +2,6 @@ package jherreroestrada;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
-//import heineman.klondike.DealCardMove;
 import ks.common.model.*;
 
 public class MountOlympusDeckController extends MouseAdapter {
@@ -18,6 +16,10 @@ public class MountOlympusDeckController extends MouseAdapter {
 		this.theGame = mountOlympus;
 	}
 	
+	/*
+	 * This function is moves a random card to the different columns when we click
+	 * on the columns.
+	 */
 	public void mousePressed(MouseEvent me){	
 		Move m = new DealCardMove(deck, columns);
 			if (m.doMove(theGame)){

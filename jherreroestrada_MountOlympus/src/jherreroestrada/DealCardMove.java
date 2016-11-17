@@ -7,15 +7,15 @@ public class DealCardMove extends ks.common.model.Move{
 	/** The deck. */
 	protected MultiDeck deck;
 
-	/** The wastePile. */
+	/** the receiving columns */
 	protected Column[] columns;
 	
 	public DealCardMove (MultiDeck deck, Column[] columns) {
 		super();
-
 		this.deck = deck;
 		this.columns = columns;
 	}
+	
 	/**
 	 * Do Move
 	 * @param theGame ks.games.Solitaire 

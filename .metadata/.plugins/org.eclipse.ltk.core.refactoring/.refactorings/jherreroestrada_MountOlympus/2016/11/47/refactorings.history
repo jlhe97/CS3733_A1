@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;jherreroestrada_MountOlympus/src/jherreroestrada/MountOlympusColumnController.java&apos; to &apos;TableauToTableauMove.java&apos;" description="Rename resource &apos;MountOlympusColumnController.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/jherreroestrada/MountOlympusColumnController.java" name="TableauToTableauMove.java" stamp="1479363472763" updateReferences="true"/>
+</session>
