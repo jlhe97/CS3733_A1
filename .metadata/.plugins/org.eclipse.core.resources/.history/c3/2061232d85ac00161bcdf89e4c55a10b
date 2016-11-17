@@ -3,7 +3,7 @@ package jherreroestrada;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-//import heineman.klondike.DealCardMove;
+import heineman.klondike.DealCardMove;
 import ks.common.model.*;
 
 public class MountOlympusDeckController extends MouseAdapter {
@@ -18,7 +18,8 @@ public class MountOlympusDeckController extends MouseAdapter {
 		this.theGame = mountOlympus;
 	}
 	
-	public void mousePressed(MouseEvent me){	
+	public void mousePressed(MouseEvent me){
+		
 		Move m = new DealCardMove(deck, columns);
 			if (m.doMove(theGame)){
 				theGame.pushMove(m);
