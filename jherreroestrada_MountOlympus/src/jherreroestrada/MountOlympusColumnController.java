@@ -4,6 +4,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import ks.common.model.Column;
+import ks.common.model.Move;
 import ks.common.view.ColumnView;
 import ks.common.view.Container;
 import ks.common.view.Widget;
@@ -45,7 +46,8 @@ public class MountOlympusColumnController extends MouseAdapter {
 	 */
 	public void mouseReleased(MouseEvent me) {
 		Container c = theGame.getContainer();
-
+		
+		
 		/** Return if there is no card being dragged chosen. */
 		Widget w = c.getActiveDraggingObject();
 		if (w == Container.getNothingBeingDragged()) {
@@ -62,12 +64,20 @@ public class MountOlympusColumnController extends MouseAdapter {
 			c.releaseDraggingObject();
 			return;
 		}
+		
+		// ------------ the move that allows to move cards from one column to another ---------
+		
+		Column dest = (Column) columnView.getModelElement();
+		Column src = (Column) cw.getModelElement();
 
-		// Determine the To Column
-		// NOTE: DON'T DO THIS. CREATE A MOVE CLASS!!!
-		Column toColumn = (Column) columnView.getModelElement();
-		Column col = (Column) cw.getModelElement();
-		toColumn.push(col);
+		Move move = new TableauToTableauMove(src, dest);
+		if (move.doMove(theGame)) {
+			theGame.pushMove (move);
+		} else {
+			fromWidget.returnWidget(w);
+		}
+		
+		// ---------------------------------------------------------------------------------------
 
 		// Tell container which object is being dragged, and where in that widget the user clicked.
 		c.releaseDraggingObject();

@@ -1,0 +1,47 @@
+package jherreroestrada;
+import ks.common.model.Column;
+
+
+public class TableauToTableauMove extends ks.common.model.Move{
+
+	protected Column src; // the source column
+	protected Column dest; // the destination column
+	
+	public TableauToTableauMove(Column src, Column dest){
+		super();
+		this.src = src;
+		this.dest = dest;
+	}
+	
+	/**
+	 * Do Move
+	 * @param theGame ks.games.Solitaire 
+	 */
+	public boolean doMove (ks.common.games.Solitaire game) {
+		// VALIDATE
+		if (valid(game) == false)
+			return false;
+		
+		// Determine the To Column
+		// NOTE: DON'T DO THIS. CREATE A MOVE CLASS!!!
+		
+		toColumn.push(col);
+		
+		return true;	
+	}
+	
+	/**
+	 * To undo this move, we move the cards from the wastePile back to the Deck.
+	 * @param theGame ks.games.Solitaire 
+	 */
+	public boolean undo(ks.common.games.Solitaire game) {
+		for (int i = 0; i < columns.length; i++){
+			deck.add(columns[i].get());
+		}
+		return true;
+	}
+	
+	public boolean valid(ks.common.games.Solitaire game) {
+		return true; // change this later.
+	}
+}

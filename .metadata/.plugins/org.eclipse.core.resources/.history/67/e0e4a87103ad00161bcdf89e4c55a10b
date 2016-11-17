@@ -1,0 +1,14 @@
+package jherreroestrada;
+import ks.common.model.Column;
+
+
+public class TableauToTableauMove extends ks.common.model.Move{
+
+	protected Column src; // the source column
+	protected Column dest; // the destination column
+	
+	public TableauToTableauMove(Column src, Column dest){
+		super();
+		
+	}
+}

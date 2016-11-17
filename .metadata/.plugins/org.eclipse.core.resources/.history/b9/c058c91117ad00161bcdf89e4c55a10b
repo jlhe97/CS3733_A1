@@ -1,0 +1,42 @@
+package jherreroestrada;
+
+import ks.common.games.Solitaire;
+import ks.common.model.*;
+
+public class TableauToFoundationMove extends Move{
+
+	Pile dest;
+	Card cardDragged;
+	Column src;
+	
+	public TableauToFoundationMove(Column src, Card cardDragged, Pile dest) {
+		this.src = src;
+		this.cardDragged = cardDragged;
+		this.dest = dest;
+	}
+	
+	@Override
+	public boolean doMove(Solitaire game) {
+		if (!valid(game)) { 
+			return false; 
+			}
+		if (cardDragged != null) {
+			dest.add(cardDragged);
+		} else {
+			foundation.add(wastePile.get());
+		}
+	}
+
+	@Override
+	public boolean undo(Solitaire game) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean valid(Solitaire game) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

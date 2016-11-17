@@ -12,6 +12,7 @@ import ks.launcher.Main;
 public class MountOlympus  extends Solitaire{
 
 	// ---- my attributes --------------
+	
 	MultiDeck deck;
 	DeckView deckView;
 	IntegerView scoreView;
@@ -45,11 +46,71 @@ public class MountOlympus  extends Solitaire{
 		initializeView();
 		initializeControllers();
 		
+		// putting all of the aces and deuces in the foundation piles.
+		
+		Card holder;
+		Stack temp = new Stack();
+		while (!deck.empty()){
+			holder = deck.get();
+
+			if (holder.isAce() || holder.getRank() == 2){
+				if (holder.isAce()){
+					if (holder.getSuit() == 1){
+						piles[0].add(holder);
+						piles[8].add(holder);
+					}
+					if(holder.getSuit() == 2){
+						piles[2].add(holder);
+						piles[10].add(holder);
+					}
+					if (holder.getSuit() == 3){
+						piles[4].add(holder);
+						piles[12].add(holder);
+					}
+					if(holder.getSuit() == 4){
+						piles[6].add(holder);
+						piles[14].add(holder);
+					}
+				}
+				if(holder.getRank() == 2){ 
+					if (holder.getSuit() == 1){
+						piles[1].add(holder);
+						piles[9].add(holder);
+					}
+					if(holder.getSuit() == 2){
+						piles[3].add(holder);
+						piles[11].add(holder);
+					}
+					if (holder.getSuit() == 3){
+						piles[5].add(holder);
+						piles[13].add(holder);
+					}
+					if(holder.getSuit() == 4){
+						piles[7].add(holder);
+						piles[15].add(holder);
+					}
+
+				}
+			} else 
+				temp.add(holder);
+		}
+		
+		while (!temp.empty()){
+			deck.add(temp.get());
+		}
+		
+		// ----------------------------------------------------------------
+		
+		
 		// handling the first hand of random cards to the tableau.
 		for(int i = 0; i < columnViews.length; i++){
 			Card c = deck.get();
 			columns[i].add(c);
 		}
+		
+		// ----------------------------------------------------------------
+		
+		
 	}
 
 	private void initializeView() {
