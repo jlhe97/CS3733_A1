@@ -63,9 +63,7 @@ public class TableauToTableauMove extends ks.common.model.Move{
 			return false;
 		}
 		
-		for(int i = movedColumn.count() - 1; i < 0; i--){
-			
-		}
+		for(int i = movedColumn.count() - 1; i < 0;)
 
 	
 		
@@ -80,6 +78,8 @@ public class TableauToTableauMove extends ks.common.model.Move{
 //				!(dest.peek().getRank() == (topRef.getRank() + 2))){
 //			return false;
 //		}
+
+
 		return true;
 	}
 }
