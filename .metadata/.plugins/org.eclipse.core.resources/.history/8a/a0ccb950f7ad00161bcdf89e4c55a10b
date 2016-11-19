@@ -66,7 +66,7 @@ public class MountOlympusColumnController extends MouseAdapter {
 		Column dest = (Column) columnView.getModelElement(); // DESTINATION COLUMN
 		ColumnView srcView = (ColumnView) fromWidget;  // SOURCE COLUMN VIEW
 		Column src = (Column) srcView.getModelElement(); // SOURCE COLUMN
-		Column draggedElt = (Column) cw.getModelElement();    // DRAGGED ELEMENT
+		Column draggedElt = (Column) cw.getModelElement();    // Dragged Element
 		int size = draggedElt.count();
 		
 		Move move = new TableauToTableauMove(dest, draggedElt, src, size);

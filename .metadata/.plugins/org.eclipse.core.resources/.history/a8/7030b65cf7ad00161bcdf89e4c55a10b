@@ -29,9 +29,6 @@ public class TableauToTableauMove extends ks.common.model.Move{
 		Stack temp = new Stack();
 		while (!movedColumn.empty()){
 			temp.add(movedColumn.get());
-		}
-		
-		while (!temp.empty()){
 			dest.add(temp.get());
 		}
 
@@ -54,7 +51,7 @@ public class TableauToTableauMove extends ks.common.model.Move{
 	}
 
 	public boolean valid(ks.common.games.Solitaire game) {
-/*
+
 		Card topRef = movedColumn.peek(movedColumn.count() - 1);
 		for(int i = (movedColumn.count() - 2); i > 0; i++){
 			if(!movedColumn.peek(i).sameSuit(topRef) && 
@@ -66,7 +63,7 @@ public class TableauToTableauMove extends ks.common.model.Move{
 				!(dest.peek().getRank() == (topRef.getRank() + 2))){
 			return false;
 		}
-*/
+
 
 		return true;
 	}

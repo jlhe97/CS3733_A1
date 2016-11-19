@@ -30,7 +30,6 @@ public class TableauToTableauMove extends ks.common.model.Move{
 		while (!movedColumn.empty()){
 			temp.add(movedColumn.get());
 		}
-		
 		while (!temp.empty()){
 			dest.add(temp.get());
 		}
