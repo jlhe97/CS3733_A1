@@ -5,6 +5,7 @@ import java.awt.event.MouseEvent;
 
 import ks.common.model.Column;
 import ks.common.model.Move;
+import ks.common.model.Stack;
 import ks.common.view.ColumnView;
 import ks.common.view.Container;
 import ks.common.view.Widget;
@@ -49,13 +50,13 @@ public class MountOlympusColumnController extends MouseAdapter {
 		
 		
 		/** Return if there is no card being dragged chosen. */
-		Widget w = c.getActiveDraggingObject();
-		if (w == Container.getNothingBeingDragged()) {
+		Widget draggingWidget = c.getActiveDraggingObject();
+		if (draggingWidget == Container.getNothingBeingDragged()) {
 			c.releaseDraggingObject();		
 			return;
 		}
 
-		ColumnView cw = (ColumnView) w;
+		//ColumnView cw = (ColumnView) w;
 
 		/** Recover the from BuildablePile OR waste Pile */
 		Widget fromWidget = c.getDragSource();
@@ -68,13 +69,17 @@ public class MountOlympusColumnController extends MouseAdapter {
 		// ------------ the move that allows to move cards from one column to another ---------
 		
 		Column dest = (Column) columnView.getModelElement();
-		Column src = (Column) cw.getModelElement();
+		Column src = (Column) fromWidget.getModelElement();
 
-		Move move = new TableauToTableauMove(src, dest);
+		ColumnView temp = (ColumnView) draggingWidget;
+		Column movedColumn = (Column) temp.getModelElement();
+		int size = dest.count();
+		
+		Move move = new TableauToTableauMove(dest, movedColumn, src, size);
 		if (move.doMove(theGame)) {
 			theGame.pushMove (move);
 		} else {
-			fromWidget.returnWidget(w);
+			fromWidget.returnWidget(draggingWidget);
 		}
 		
 		// ---------------------------------------------------------------------------------------

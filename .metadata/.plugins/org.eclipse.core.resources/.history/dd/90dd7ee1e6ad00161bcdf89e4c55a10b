@@ -1,0 +1,54 @@
+package jherreroestrada;
+import ks.common.model.*;
+
+
+public class TableauToTableauMove extends ks.common.model.Move{
+
+	protected Column src; // the source column
+	protected Column dest; // the destination column
+	protected Column movedColumn; // the moved column
+	protected int size; // size of the column
+	
+	public TableauToTableauMove(Column dest, Column movedColumn, Column src,int size){
+		super();
+		this.dest = dest;
+		this.movedColumn = movedColumn;
+		this.src = src;
+		this.size = size;
+	}
+	
+	/**
+	 * Do Move
+	 * @param theGame ks.games.Solitaire 
+	 */
+	public boolean doMove (ks.common.games.Solitaire game) {
+		// VALIDATE
+		Stack temp = new Stack();
+		if (valid(game) == false)
+			return false;
+		
+		while (!movedColumn.empty()){
+			temp.add(movedColumn.get());
+			dest.add(temp.get());
+		}
+		
+		return true;	
+	}
+	
+	/**
+	 * This method returns the column that was moved to the dest.
+	 */
+	public boolean undo(ks.common.games.Solitaire game) {
+		Stack temp = new Stack();
+		while(temp.count() != size){
+			temp.add(dest.get());
+			src.add(temp.get());
+		}
+		
+		return true;
+	}
+	
+	public boolean valid(ks.common.games.Solitaire game) {
+		return true; // change this later.
+	}
+}
