@@ -43,8 +43,8 @@ public class MountOlympusPileController extends MouseAdapter{
 
 		// Determine the To Pile
 		Pile dest = (Pile) pileView.getModelElement(); // DESTINATION PILE
-		ColumnView srcView = (ColumnView) fromWidget;  // SOURCE COLUMN VIEW
-		Column src = (Column) srcView.getModelElement(); // SOURCE COLUMN
+		ColumnView srcView = (ColumnView) fromWidget;
+		Column src = (Column) srcView.getModelElement();
 		Column draggedElt = (Column) cw.getModelElement();    // Dragged Element
 
 		Move move = new TableauToFoundationMove(src, draggedElt, dest);

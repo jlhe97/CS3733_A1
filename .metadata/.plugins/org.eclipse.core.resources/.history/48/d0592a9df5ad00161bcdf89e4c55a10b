@@ -3,8 +3,13 @@ package jherreroestrada;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import ks.common.model.*;
-import ks.common.view.*;
+import ks.common.model.Column;
+import ks.common.model.Move;
+import ks.common.model.Pile;
+import ks.common.model.Stack;
+import ks.common.view.ColumnView;
+import ks.common.view.Container;
+import ks.common.view.Widget;
 
 /*
  * This controller is in charge of moving columns in the tableau to other columns.
@@ -63,13 +68,13 @@ public class MountOlympusColumnController extends MouseAdapter {
 		}
 
 		// Determine the To Pile
-		Column dest = (Column) columnView.getModelElement(); // DESTINATION COLUMN
+		Pile dest = (Pile) pileView.getModelElement(); // DESTINATION PILE
 		ColumnView srcView = (ColumnView) fromWidget;  // SOURCE COLUMN VIEW
 		Column src = (Column) srcView.getModelElement(); // SOURCE COLUMN
 		Column draggedElt = (Column) cw.getModelElement();    // Dragged Element
 		int size = dest.count();
 		
-		Move move = new TableauToTableauMove(dest, draggedElt, src, size);
+		Move move = new TableauToTableauMove(dest, movedColumn, src, size);
 		if (move.doMove(theGame)) {
 			theGame.pushMove (move);
 		} else {
