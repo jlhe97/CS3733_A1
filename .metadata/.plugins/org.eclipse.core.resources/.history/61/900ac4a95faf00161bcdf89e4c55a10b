@@ -203,8 +203,6 @@ public class MountOlympus  extends Solitaire{
 			
 		// ------------------------------------------------------
 		
-		updateNumberCardsLeft(79); // there 79 cards left. 104 - 25 = 79
-		updateScore(16);           // score starts at 16 bc of aces and deuces.
 	}
 	
 	

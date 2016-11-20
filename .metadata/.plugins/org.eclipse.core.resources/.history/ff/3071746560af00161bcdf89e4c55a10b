@@ -26,7 +26,7 @@ public class DealCardMove extends ks.common.model.Move{
 
 		for (int i = 0; i < columns.length && !deck.empty(); i++){
 			columns[i].add(deck.get());
-			game.updateNumberCardsLeft(-1);
+			game.updateNumberCardsLeft(-(i+1));
 		}
 
 		
