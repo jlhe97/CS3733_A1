@@ -1,0 +1,7 @@
+package jherreroestrada;
+
+import junit.framework.TestCase;
+
+public class TableauToTableauMove extends TestCase {
+
+}

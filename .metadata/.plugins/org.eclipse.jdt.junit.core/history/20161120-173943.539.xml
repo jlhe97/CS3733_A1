@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestDealCardMove" project="jherreroestrada_MountOlympus" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="jherreroestrada.TestDealCardMove" time="2.016">
+    <testcase name="testDealCardMove" classname="jherreroestrada.TestDealCardMove" time="1.679"/>
+    <testcase name="testTableauToTableauMove" classname="jherreroestrada.TestDealCardMove" time="0.337"/>
+  </testsuite>
+</testrun>

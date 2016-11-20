@@ -1,0 +1,27 @@
+package jherreroestrada;
+import ks.client.gamefactory.GameWindow;
+import ks.common.model.Deck;
+import ks.launcher.Main;
+import ks.tests.KSTestCase;
+import java.awt.event.MouseEvent;
+
+public class TestControllers extends KSTestCase{
+
+	MountOlympus mountOlympus;
+	GameWindow gw;
+	
+	@Override
+	protected void setUp() {
+		mountOlympus = new MountOlympus();
+		gw = Main.generateWindow(mountOlympus, Deck.OrderBySuit);
+	}
+	
+	@Override
+	protected void tearDown() { 
+		gw.dispose();
+	}
+	
+
+}
+
+

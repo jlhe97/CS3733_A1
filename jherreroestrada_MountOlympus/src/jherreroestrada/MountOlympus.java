@@ -36,8 +36,7 @@ public class MountOlympus  extends Solitaire{
 
 	@Override
 	public boolean hasWon() {
-		// TODO Auto-generated method stub
-		return false;
+		return getScore().getValue() == 104;
 	}
 
 	@Override

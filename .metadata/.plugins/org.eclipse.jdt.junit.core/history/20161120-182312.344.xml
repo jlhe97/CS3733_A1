@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRedBlackDeckController" project="heineman_RedBlack" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="heineman.TestRedBlackDeckController" time="1.55">
+    <testcase name="testPressLogic" classname="heineman.TestRedBlackDeckController" time="1.55"/>
+  </testsuite>
+</testrun>

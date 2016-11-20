@@ -1,0 +1,34 @@
+package jherreroestrada;
+import ks.client.gamefactory.GameWindow;
+import ks.common.model.Deck;
+import ks.launcher.Main;
+import ks.tests.KSTestCase;
+import java.awt.event.MouseEvent;
+
+public class TestControllers extends KSTestCase{
+
+	MountOlympus mountOlympus;
+	GameWindow gw;
+	
+	@Override
+	protected void setUp() {
+		mountOlympus = new MountOlympus();
+		gw = Main.generateWindow(mountOlympus, Deck.OrderBySuit);
+	}
+	
+	@Override
+	protected void tearDown() { 
+		gw.dispose();
+	}
+	
+	public void testPressLogic() {
+		// create mouse press at (0,0) within the deckview; should deal card
+		MouseEvent press = this.createPressed(mountOlympus, mountOlympus.deckView, 0, 0);
+		mountOlympus.deckView.getMouseManager().handleMouseEvent(press);
+		
+		// what do we know about the game after press on deck? Card dealt!
+		assertEquals ("KS", mountOlympus.columns[1].peek().toString()); 
+	}
+}
+
+

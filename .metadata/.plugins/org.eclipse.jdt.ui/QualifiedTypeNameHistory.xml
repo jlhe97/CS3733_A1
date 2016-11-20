@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="ks.launcher.Main"/>
+<fullyQualifiedTypeName name="ks.client.gamefactory.GameWindow"/>
+<fullyQualifiedTypeName name="java.awt.Dimension"/>
+<fullyQualifiedTypeName name="ks.common.model.Column"/>
+<fullyQualifiedTypeName name="ks.common.model.MultiDeck"/>
+<fullyQualifiedTypeName name="heineman.klondike.DealCardMove"/>
+<fullyQualifiedTypeName name="ks.common.games.SolitaireUndoAdapter"/>
+<fullyQualifiedTypeName name="java.awt.event.MouseEvent"/>
+<fullyQualifiedTypeName name="ks.common.controller.SolitaireMouseMotionAdapter"/>
+<fullyQualifiedTypeName name="ks.common.view.PileView"/>
+<fullyQualifiedTypeName name="ks.common.view.ColumnView"/>
+<fullyQualifiedTypeName name="ks.common.model.Stack"/>
+</qualifiedTypeNameHistroy>
