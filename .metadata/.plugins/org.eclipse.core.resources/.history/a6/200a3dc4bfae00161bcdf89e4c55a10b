@@ -55,31 +55,38 @@ public class TableauToTableauMove extends ks.common.model.Move{
 
 	public boolean valid(ks.common.games.Solitaire game) {
 		
-		// if the column moved is not all same color and suit, then not valid
-		if (!movedColumn.sameSuit()){ 
+		// if the column moved is not all same column, the not valid
+		if (!movedColumn.sameColor()){ 
 			return false;
 		}
 		
-		// If column not same color and suit as top card from column, then not valid
-		if(!movedColumn.peek(movedColumn.count() - 1).sameSuit(dest.peek())){
+		// If column not same color as top card from column, then not valid
+		if(!movedColumn.peek(movedColumn.count() - 1).sameColor(dest.peek())){
 			return false;
 		}
 		
 		// The bottom most card of the column moved has to be 2 ranks lower than 
 		// the top card of the destination column.
-		// movedColumn.peek(0) returns the bottom most card.
-		if (!(movedColumn.peek(0).getRank() == (dest.peek(dest.count() - 1).getRank() - 2)))
+		if (!(movedColumn.peek(movedColumn.count() - 1).getRank() == (dest.peek().getRank() - 2)))
 			return false;
 		
-		// this part of the method checks if all of the cards in the column being moved
-		// are 2 ranks smaller than the next one.
-		Card topRef = movedColumn.peek(0);
-		for(int i = 1; i < movedColumn.count() - 1 ; i++){
-			if(!movedColumn.peek(i).sameSuit(topRef) && 
-				!(movedColumn.peek(i).getRank() == (topRef.getRank() - (i*2))))
-  				 return false;
+		for(int i = movedColumn.count() - 1; i < 0; i--){
+			
 		}
+
+	
 		
+//		Card topRef = movedColumn.peek(movedColumn.count() - 1);
+//		for(int i = (movedColumn.count() - 1); i > 0; i--){
+//			if(!movedColumn.peek(i).sameSuit(topRef) && 
+//					!(movedColumn.peek(i).getRank() == (topRef.getRank() - (i*2))))
+//				return false;
+//		}
+//
+//		if (!dest.peek().sameColor(topRef) && 
+//				!(dest.peek().getRank() == (topRef.getRank() + 2))){
+//			return false;
+//		}
 		return true;
 	}
 }

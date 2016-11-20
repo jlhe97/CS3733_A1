@@ -71,8 +71,6 @@ public class TableauToTableauMove extends ks.common.model.Move{
 		if (!(movedColumn.peek(0).getRank() == (dest.peek(dest.count() - 1).getRank() - 2)))
 			return false;
 		
-		// this part of the method checks if all of the cards in the column being moved
-		// are 2 ranks smaller than the next one.
 		Card topRef = movedColumn.peek(0);
 		for(int i = 1; i < movedColumn.count() - 1 ; i++){
 			if(!movedColumn.peek(i).sameSuit(topRef) && 
@@ -80,6 +78,21 @@ public class TableauToTableauMove extends ks.common.model.Move{
   				 return false;
 		}
 		
+		
+
+	
+		
+		
+//		for(int i = (movedColumn.count() - 1); i > 0; i--){
+//			if(!movedColumn.peek(i).sameSuit(topRef) && 
+//					!(movedColumn.peek(i).getRank() == (topRef.getRank() - (i*2))))
+//				return false;
+//		}
+//
+//		if (!dest.peek().sameColor(topRef) && 
+//				!(dest.peek().getRank() == (topRef.getRank() + 2))){
+//			return false;
+//		}
 		return true;
 	}
 }
