@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestDealCardMove" project="jherreroestrada_MountOlympus" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="jherreroestrada.TestDealCardMove" time="1.886">
-    <testcase name="testDealCardMove" classname="jherreroestrada.TestDealCardMove" time="1.21"/>
-    <testcase name="testTableauToTableauMove" classname="jherreroestrada.TestDealCardMove" time="0.342"/>
-    <testcase name="testTableauToFoundationMove" classname="jherreroestrada.TestDealCardMove" time="0.334"/>
-  </testsuite>
-</testrun>

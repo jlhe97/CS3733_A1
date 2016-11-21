@@ -1,7 +1,0 @@
-package jherreroestrada;
-
-import junit.framework.TestCase;
-
-public class TestDealCardMove extends TestCase {
-
-}

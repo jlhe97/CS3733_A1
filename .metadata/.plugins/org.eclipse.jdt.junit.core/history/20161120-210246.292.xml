@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestPileController" project="jherreroestrada_MountOlympus" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="jherreroestrada.TestPileController" time="3.153">
-    <testcase name="testPileController" classname="jherreroestrada.TestPileController" time="3.153"/>
-  </testsuite>
-</testrun>

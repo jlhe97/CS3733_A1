@@ -3,7 +3,6 @@
 <fullyQualifiedTypeName name="ks.launcher.Main"/>
 <fullyQualifiedTypeName name="ks.client.gamefactory.GameWindow"/>
 <fullyQualifiedTypeName name="java.awt.Dimension"/>
-<fullyQualifiedTypeName name="ks.common.model.Column"/>
 <fullyQualifiedTypeName name="ks.common.model.MultiDeck"/>
 <fullyQualifiedTypeName name="heineman.klondike.DealCardMove"/>
 <fullyQualifiedTypeName name="ks.common.games.SolitaireUndoAdapter"/>
@@ -12,4 +11,7 @@
 <fullyQualifiedTypeName name="ks.common.view.PileView"/>
 <fullyQualifiedTypeName name="ks.common.view.ColumnView"/>
 <fullyQualifiedTypeName name="ks.common.model.Stack"/>
+<fullyQualifiedTypeName name="ks.common.model.Column"/>
+<fullyQualifiedTypeName name="ks.common.model.Pile"/>
+<fullyQualifiedTypeName name="ks.tests.KSTestCase"/>
 </qualifiedTypeNameHistroy>
