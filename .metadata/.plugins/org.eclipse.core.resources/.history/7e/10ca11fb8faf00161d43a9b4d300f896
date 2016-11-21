@@ -25,7 +25,7 @@ public class TestColumnController extends KSTestCase {
 	}
 	
 	
-	public void testColumnController() {
+	public void testPileController() {
 
 		
 		// first create a mouse event
