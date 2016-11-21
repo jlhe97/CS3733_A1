@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="jherreroestrada" project="jherreroestrada_MountOlympus" tests="8" started="8" failures="2" errors="0" ignored="0">
+  <testsuite name="jherreroestrada.TestColumnController" time="0.0">
+    <testcase name="warning" classname="junit.framework.TestSuite.1" time="0.0">
+      <failure>junit.framework.AssertionFailedError: No tests found in jherreroestrada.TestColumnController
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.TestCase.fail(TestCase.java:227)
+	at junit.framework.TestSuite$1.runTest(TestSuite.java:97)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:252)
+	at junit.framework.TestSuite.run(TestSuite.java:247)
+	at org.eclipse.jdt.internal.junit.runner.junit3.JUnit3TestReference.run(JUnit3TestReference.java:121)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="jherreroestrada.TestDeckController" time="1.458">
+    <testcase name="testPressLogic" classname="jherreroestrada.TestDeckController" time="1.458"/>
+  </testsuite>
+  <testsuite name="jherreroestrada.TestDealCardMove" time="0.678">
+    <testcase name="testDealCardMove1" classname="jherreroestrada.TestDealCardMove" time="0.345"/>
+    <testcase name="testDealCardMove2" classname="jherreroestrada.TestDealCardMove" time="0.333"/>
+  </testsuite>
+  <testsuite name="jherreroestrada.TestTableauToFoundationMove" time="0.651">
+    <testcase name="testTableauToFoundationMove2" classname="jherreroestrada.TestTableauToFoundationMove" time="0.332"/>
+    <testcase name="testTableauToFoundationMove" classname="jherreroestrada.TestTableauToFoundationMove" time="0.319"/>
+  </testsuite>
+  <testsuite name="jherreroestrada.TestPileController" time="0.0">
+    <testcase name="warning" classname="junit.framework.TestSuite.1" time="0.0">
+      <failure>junit.framework.AssertionFailedError: No tests found in jherreroestrada.TestPileController
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.TestCase.fail(TestCase.java:227)
+	at junit.framework.TestSuite$1.runTest(TestSuite.java:97)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:252)
+	at junit.framework.TestSuite.run(TestSuite.java:247)
+	at org.eclipse.jdt.internal.junit.runner.junit3.JUnit3TestReference.run(JUnit3TestReference.java:121)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="jherreroestrada.TestTableauToTableauMove" time="0.33">
+    <testcase name="testTableauToTableauMove" classname="jherreroestrada.TestTableauToTableauMove" time="0.33"/>
+  </testsuite>
+</testrun>

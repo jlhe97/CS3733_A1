@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="jherreroestrada" project="jherreroestrada_MountOlympus" tests="8" started="8" failures="0" errors="0" ignored="0">
+  <testsuite name="jherreroestrada.TestColumnController" time="1.613">
+    <testcase name="testPileController" classname="jherreroestrada.TestColumnController" time="1.613"/>
+  </testsuite>
+  <testsuite name="jherreroestrada.TestDeckController" time="0.397">
+    <testcase name="testPressLogic" classname="jherreroestrada.TestDeckController" time="0.397"/>
+  </testsuite>
+  <testsuite name="jherreroestrada.TestDealCardMove" time="0.67">
+    <testcase name="testDealCardMove1" classname="jherreroestrada.TestDealCardMove" time="0.349"/>
+    <testcase name="testDealCardMove2" classname="jherreroestrada.TestDealCardMove" time="0.321"/>
+  </testsuite>
+  <testsuite name="jherreroestrada.TestTableauToFoundationMove" time="0.651">
+    <testcase name="testTableauToFoundationMove2" classname="jherreroestrada.TestTableauToFoundationMove" time="0.331"/>
+    <testcase name="testTableauToFoundationMove" classname="jherreroestrada.TestTableauToFoundationMove" time="0.32"/>
+  </testsuite>
+  <testsuite name="jherreroestrada.TestPileController" time="0.35">
+    <testcase name="testPileController" classname="jherreroestrada.TestPileController" time="0.35"/>
+  </testsuite>
+  <testsuite name="jherreroestrada.TestTableauToTableauMove" time="0.329">
+    <testcase name="testTableauToTableauMove" classname="jherreroestrada.TestTableauToTableauMove" time="0.329"/>
+  </testsuite>
+</testrun>

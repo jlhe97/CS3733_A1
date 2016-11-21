@@ -1,0 +1,53 @@
+package jherreroestrada;
+
+import java.awt.event.MouseEvent;
+
+import junit.framework.TestCase;
+import ks.client.gamefactory.GameWindow;
+import ks.common.model.Deck;
+import ks.launcher.Main;
+import ks.tests.KSTestCase;
+
+public class TestPileController extends KSTestCase {
+
+	MountOlympus mountOlympus;
+	GameWindow gw;
+	
+	@Override
+	protected void setUp() {
+		mountOlympus = new MountOlympus();
+		gw = Main.generateWindow(mountOlympus, Deck.OrderBySuit);
+	}
+	
+	@Override
+	protected void tearDown() {
+		gw.dispose();
+	}
+	
+	public void testPileController() {
+
+		DealCardMove dcm1 = new DealCardMove(mountOlympus.deck, mountOlympus.columns);
+		
+		// first create a mouse event
+		MouseEvent pr = createPressed (mountOlympus, mountOlympus.pileViews[7], 0, 6*mountOlympus.pileViews[7].getSmallOverlap());
+		mountOlympus.pileViews[7].getMouseManager().handleMouseEvent(pr);
+
+		// drop on the first column
+		MouseEvent rel = createReleased (mountOlympus, mountOlympus.pileViews[1], 0, 0);
+		mountOlympus.pileViews[1].getMouseManager().handleMouseEvent(rel);
+
+		assertEquals (2, mountOlympus.piles[1].count());
+		
+		assertFalse (mountOlympus.piles[7].peek().isFaceUp());
+
+		// go ahead and flip card by re-executing move
+		mountOlympus.pileViews[7].getMouseManager().handleMouseEvent(pr);
+		assertTrue (mountOlympus.piles[7].peek().isFaceUp());
+
+		// undo twice.
+		assertTrue (mountOlympus.undoMove());
+		assertTrue (mountOlympus.undoMove());
+		assertEquals (1, mountOlympus.piles[1].count());
+		
+	}
+}

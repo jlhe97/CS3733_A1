@@ -1,0 +1,25 @@
+package jherreroestrada;
+
+import junit.framework.TestCase;
+import ks.client.gamefactory.GameWindow;
+import ks.common.model.Deck;
+import ks.launcher.Main;
+
+public class TestColumnController extends TestCase {
+
+	MountOlympus mountOlympus;
+	GameWindow gw;
+	
+	@Override
+	protected void setUp() {
+		mountOlympus = new MountOlympus();
+		gw = Main.generateWindow(mountOlympus, Deck.OrderBySuit);
+	}
+	
+	@Override
+	protected void tearDown() {
+		gw.dispose();
+	}
+	
+	
+}

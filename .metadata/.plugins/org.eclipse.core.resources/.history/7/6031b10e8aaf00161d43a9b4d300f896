@@ -1,0 +1,19 @@
+package jherreroestrada;
+
+import java.awt.event.MouseEvent;
+import ks.tests.KSTestCase;
+import junit.framework.TestCase;
+
+public class TestDeckController extends TestCase {
+
+	
+	public void testPressLogic() {
+		// create mouse press at (0,0) within the deckview; should deal card
+		MouseEvent press = this.createPressed(mountOlympus, mountOlympus.deckView, 0, 0);
+		mountOlympus.deckView.getMouseManager().handleMouseEvent(press);
+		
+		// what do we know about the game after press on deck? Card dealt!
+		assertEquals ("4S", mountOlympus.columns[0].peek().toString()); 
+	}
+	
+}

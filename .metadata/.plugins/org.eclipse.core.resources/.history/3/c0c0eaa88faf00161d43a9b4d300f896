@@ -1,0 +1,43 @@
+package jherreroestrada;
+
+import java.awt.event.MouseEvent;
+
+
+import ks.client.gamefactory.GameWindow;
+import ks.common.model.Deck;
+import ks.launcher.Main;
+import ks.tests.KSTestCase;
+
+public class TestColumnController extends KSTestCase {
+
+	MountOlympus mountOlympus;
+	GameWindow gw;
+	
+	@Override
+	protected void setUp() {
+		mountOlympus = new MountOlympus();
+		gw = Main.generateWindow(mountOlympus, Deck.OrderBySuit);
+	}
+	
+	@Override
+	protected void tearDown() {
+		gw.dispose();
+	}
+	
+	
+	public void testPileController() {
+
+		
+		// first create a mouse event
+		MouseEvent pr = createPressed (mountOlympus, mountOlympus.columnViews[2], 0, 0);
+		mountOlympus.columnViews[2].getMouseManager().handleMouseEvent(pr);
+
+		// drop on the first column
+		MouseEvent rel = createReleased (mountOlympus, mountOlympus.pileViews[0], 0, 0);
+		mountOlympus.pileViews[0].getMouseManager().handleMouseEvent(rel);
+
+		assertEquals (2, mountOlympus.columns[0].count());
+		
+	}
+	
+}
