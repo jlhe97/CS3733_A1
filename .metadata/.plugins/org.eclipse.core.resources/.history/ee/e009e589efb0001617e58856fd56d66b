@@ -3,7 +3,6 @@ import java.awt.Dimension;
 
 import ks.client.gamefactory.GameWindow;
 import ks.common.controller.SolitaireMouseMotionAdapter;
-import ks.common.controller.SolitaireReleasedAdapter;
 import ks.common.games.Solitaire;
 import ks.common.games.SolitaireUndoAdapter;
 import ks.common.model.*;
@@ -165,7 +164,6 @@ public class MountOlympus  extends Solitaire{
 		deckView.setMouseAdapter(new MountOlympusDeckController(this, deck, columns));
 		deckView.setUndoAdapter(new SolitaireUndoAdapter(this));
 		deckView.setMouseMotionAdapter(new SolitaireMouseMotionAdapter(this));
-		deckView.setMouseAdapter (new SolitaireReleasedAdapter(this));
 		
 		for(int i = 0; i < columnViews.length; i++){
 			columnViews[i].setUndoAdapter(new SolitaireUndoAdapter(this));
@@ -181,10 +179,7 @@ public class MountOlympus  extends Solitaire{
 		
 		scoreView.setMouseMotionAdapter(new SolitaireMouseMotionAdapter(this));
 		numLeftView.setMouseMotionAdapter(new SolitaireMouseMotionAdapter(this));
-		
-		scoreView.setMouseAdapter (new SolitaireReleasedAdapter(this));
-		numLeftView.setMouseAdapter (new SolitaireReleasedAdapter(this));
-		
+
 	}
 
 	private void initializeModel(int seed) {

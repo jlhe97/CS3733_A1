@@ -18,7 +18,7 @@ public class MountOlympusColumnController extends MouseAdapter {
 		this.theGame = mountOlympus;
 		this.columnView = columnView;
 	}
- 
+
 	/*
 	 * This method allows the player to drag a card to and from a column
 	 */

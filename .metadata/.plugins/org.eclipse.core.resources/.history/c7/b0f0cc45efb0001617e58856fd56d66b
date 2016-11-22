@@ -15,7 +15,7 @@ public class MountOlympusPileController extends MouseAdapter{
 		this.pileView = pileView;
 	}
 	
-	 
+	
 	/**
 	 * This method allows the player to release and drop a card from one of the columns
 	 * to the foundation piles.
